@@ -19,5 +19,23 @@ namespace MarsRover_Kata
         {
             return $"{x},{y},{direction}";
         }
+
+        public void MoveForward()
+        {
+            switch (direction)
+            {
+                case "N":
+                    y++; break;
+
+                case "S":
+                    y--; break;
+
+                case "E":
+                    x++; break;
+
+                case "W":
+                    x--; break;
+            }
+        }
     }
 }
