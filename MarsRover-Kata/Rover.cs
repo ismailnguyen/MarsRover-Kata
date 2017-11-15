@@ -1,4 +1,6 @@
-﻿namespace MarsRover_Kata
+﻿using System;
+
+namespace MarsRover_Kata
 {
     public class Rover
     {
@@ -33,6 +35,24 @@
 
                 case Direction.West:
                     x--; break;
+            }
+        }
+
+        public void MoveBackward()
+        {
+            switch (Direction)
+            {
+                case Direction.North:
+                    y--; break;
+
+                case Direction.South:
+                    y++; break;
+
+                case Direction.East:
+                    x--; break;
+
+                case Direction.West:
+                    x++; break;
             }
         }
     }
