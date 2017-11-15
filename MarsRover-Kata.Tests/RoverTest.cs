@@ -68,5 +68,21 @@ namespace MarsRover_Kata.Tests
             // THEN
             Check.That(rover.ToString()).IsEqualTo(expectedPosition);
         }
+
+        [TestCase(0, 0, Direction.North, "0,0,West")]
+        [TestCase(0, 0, Direction.South, "0,0,East")]
+        [TestCase(0, 0, Direction.East, "0,0,North")]
+        [TestCase(0, 0, Direction.West, "0,0,South")]
+        public void Should_Rover_Turn_Left(int x, int y, Direction direction, string expectedPosition)
+        {
+            // GIVEN
+            Rover rover = new Rover(x, y, direction);
+
+            // WHEN
+            rover.TurnLeft();
+
+            // THEN
+            Check.That(rover.ToString()).IsEqualTo(expectedPosition);
+        }
     }
 }
