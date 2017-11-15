@@ -85,5 +85,27 @@ namespace MarsRover_Kata
                     break;
             }
         }
+
+        public void TurnLeft()
+        {
+            switch (Direction)
+            {
+                case Direction.North:
+                    Direction = Direction.West;
+                    break;
+
+                case Direction.South:
+                    Direction = Direction.East;
+                    break;
+
+                case Direction.East:
+                    Direction = Direction.North;
+                    break;
+
+                case Direction.West:
+                    Direction = Direction.South;
+                    break;
+            }
+        }
     }
 }
