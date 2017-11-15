@@ -1,39 +1,37 @@
-﻿using System;
-
-namespace MarsRover_Kata
+﻿namespace MarsRover_Kata
 {
     public class Rover
     {
         private int x;
         private int y;
-        private string direction;
+        private Direction Direction;
 
-        public Rover(int x, int y, string direction)
+        public Rover(int x, int y, Direction direction)
         {
             this.x = x;
             this.y = y;
-            this.direction = direction;
+            Direction = direction;
         }
 
         public override string ToString()
         {
-            return $"{x},{y},{direction}";
+            return $"{x},{y},{Direction}";
         }
 
         public void MoveForward()
         {
-            switch (direction)
+            switch (Direction)
             {
-                case "N":
+                case Direction.North:
                     y++; break;
 
-                case "S":
+                case Direction.South:
                     y--; break;
 
-                case "E":
+                case Direction.East:
                     x++; break;
 
-                case "W":
+                case Direction.West:
                     x--; break;
             }
         }
